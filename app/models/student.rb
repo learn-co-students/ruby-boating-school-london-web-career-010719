@@ -27,7 +27,8 @@ class Student
 
   def grade_percentage
     passed_tests = self.tests.select{|test| test.status == "complete"}.length.to_f
-    passed_tests/ self.tests.length.to_f
+    fraction = passed_tests/ self.tests.length.to_f
+    return fraction * 100
   end
 
 end
