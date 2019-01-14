@@ -16,5 +16,8 @@ test1 = BoatingTest.new("Boating 101", student1, instructor1, "incomplete")
 test2 = BoatingTest.new("Boating 102", student1, instructor1, "incomplete")
 test3 = BoatingTest.new("Boating 103", student1, instructor1, "incomplete")
 
+instructor1.pass_student("Joey", "Boating 101")
+instructor1.pass_student("Joey", "Boating 104")
+
 binding.pry
 0 #leave this here to ensure binding.pry isn't the last line

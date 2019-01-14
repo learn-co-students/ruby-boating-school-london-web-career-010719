@@ -26,8 +26,8 @@ class Student
   end
 
   def grade_percentage
-    passed_tests = self.tests.select{|test| test.status == "complete"}.length
-    passed_tests/ self.tests.length
+    passed_tests = self.tests.select{|test| test.status == "complete"}.length.to_f
+    passed_tests/ self.tests.length.to_f
   end
 
 end
