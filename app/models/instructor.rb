@@ -13,9 +13,13 @@ class Instructor
     @@all
   end
 
+  def my_tests
+    BoatingTest.all.select{|test| test.instructor == self}
+  end
+
   def pass_student(student_name, test_name)
     student = Student.find_student(student_name)
-    BoatingTest.all.each do |test|
+    my_tests.each do |test|
       if test.test_name == test_name && student.first_name == student_name
         test.status=("complete")
       else
@@ -24,9 +28,10 @@ class Instructor
     end
   end
 
+
   def fail_student(student_name, test_name)
     student = Student.find_student(student_name)
-    BoatingTest.all.each do |test|
+    my_tests.each do |test|
       if test.test_name == test_name && student.first_name == student_name
         test.status=("failed")
       else
