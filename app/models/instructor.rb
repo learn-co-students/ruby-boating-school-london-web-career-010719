@@ -19,9 +19,9 @@ class Instructor
       if test.test_name == test_name && student.first_name == student_name
         test.status=("complete")
       else
-        student.add_boating_test(test_name, self, status="complete")
+        student.add_boating_test(test_name, self, "complete") 
       end
     end
   end
-  
+
 end
