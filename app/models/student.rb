@@ -18,7 +18,16 @@ class Student
   end
 
   def self.find_student(name)
-    self.all.select {|student| student.first_name == name}
+    self.all.find {|student| student.first_name == name}
+  end
+
+  def tests
+    BoatingTest.all.select {|test| test.student = self}
+  end
+
+  def grade_percentage
+    passed_tests = self.tests.select{|test| test.status == "complete"}.length
+    passed_tests/ self.tests.length
   end
 
 end
